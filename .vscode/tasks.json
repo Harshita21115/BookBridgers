@@ -1,0 +1,179 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Full Stack App",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "concurrently",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*webpack compiled.*|.*Server is running.*"
+        }
+      }
+    },
+    {
+      "label": "Start Development Mode",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "concurrently",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*webpack compiled.*|.*Server is running.*"
+        }
+      }
+    },
+    {
+      "label": "npm: start:client",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}/client"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "webpack",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*webpack compiled.*"
+        }
+      }
+    },
+    {
+      "label": "npm: dev:server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/server"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "nodemon",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*Server is running.*"
+        }
+      }
+    },
+    {
+      "label": "Start MongoDB",
+      "type": "shell",
+      "command": "brew",
+      "args": ["services", "start", "mongodb-community"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Stop MongoDB",
+      "type": "shell",
+      "command": "brew",
+      "args": ["services", "stop", "mongodb-community"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Seed Database",
+      "type": "shell",
+      "command": "node",
+      "args": ["insertDataCorrectly.js"],
+      "options": {
+        "cwd": "${workspaceFolder}/server"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

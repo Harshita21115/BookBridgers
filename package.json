@@ -1,39 +1,36 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "bookbridgers-app",
+    "version": "1.0.0",
+    "description": "BookBridgers - Library Management System",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+        "server": "cd server && npm start",
+        "server:dev": "cd server && npm run dev",
+        "client": "cd client && npm start",
+        "client:dev": "cd client && npm start",
+        "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+        "build": "cd client && npm run build",
+        "seed": "cd server && node seedSampleData.js",
+        "add-images": "cd server && node addBookImages.js",
+        "mongodb:start": "brew services start mongodb-community",
+        "mongodb:stop": "brew services stop mongodb-community",
+        "mongodb:restart": "brew services restart mongodb-community",
+        "setup": "npm run install:all && npm run mongodb:start && npm run seed",
+        "clean": "cd server && rm -rf node_modules && cd ../client && rm -rf node_modules && rm -rf node_modules"
+    },
+    "keywords": [
+        "library",
+        "management",
+        "books",
+        "react",
+        "nodejs",
+        "mongodb"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "author": "BookBridgers Team",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
 }

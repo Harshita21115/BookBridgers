@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Library Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack library management application with role-based access control (Student, Donor, Admin) built with React frontend and Node.js/Express backend with MongoDB.
+
+## Features
+
+- User authentication and authorization
+- Role-based access (Student, Donor, Admin)
+- Book browsing and borrowing system
+- Book donation management
+- Admin dashboard for managing users, books, and requests
+- Real-time request status tracking
+- Responsive UI with Bootstrap
 
 ## Available Scripts
 

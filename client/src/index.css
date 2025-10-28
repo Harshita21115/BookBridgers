@@ -1,0 +1,67 @@
+/* Header Styles */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid rgba(43, 59, 74, 0.03);
+  padding: 0.5rem 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  color: #7fb1ff;
+  font-size: 1.2rem;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#cfe9ff,#a7f0d0);
+}
+
+.nav-links a {
+  color: #2b3b4a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #7fb1ff;
+}
+
+/* Hamburger button */
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Responsive Menu */
+.nav-links {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin-bottom: 10px;
+  }
+}
